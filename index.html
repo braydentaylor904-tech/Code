@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top-Down Fishing MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="game-panel">
+      <canvas id="gameCanvas" width="960" height="640" aria-label="Fishing game"></canvas>
+      <div id="overlay" class="overlay" aria-live="polite"></div>
+    </section>
+
+    <aside class="hud">
+      <h1>Top-Down Fishing MVP</h1>
+      <div class="hud-card">
+        <h2>State</h2>
+        <p id="stateText">Idle</p>
+      </div>
+      <div class="hud-card">
+        <h2>Map</h2>
+        <p id="mapText"></p>
+      </div>
+      <div class="hud-card">
+        <h2>Catch Log</h2>
+        <ul id="catchLog"></ul>
+      </div>
+      <div class="hud-card">
+        <h2>Help</h2>
+        <p>Click water to cast. Press <kbd>Space</kbd> when bobber fully submerges.</p>
+        <p>Reeling: hold <kbd>Space</kbd> to raise meter; release to let it drop.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

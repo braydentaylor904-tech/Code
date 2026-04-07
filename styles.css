@@ -1,0 +1,111 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d1c26;
+  --panel: #122633;
+  --line: #25465c;
+  --text: #e6f4ff;
+  --accent: #61d0ff;
+  --good: #66d17a;
+  --warn: #ffdb5a;
+  --bad: #ff7d7d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #163447, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.game-panel {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b1a24;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hud {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hud h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.hud-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--panel), black 10%);
+  padding: 0.75rem;
+}
+
+.hud-card h2 {
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.hud-card p { margin: 0.35rem 0; }
+
+#catchLog {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  max-height: 220px;
+  overflow: auto;
+}
+
+#catchLog li {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.5rem;
+  font-size: 0.92rem;
+}
+
+kbd {
+  background: #0a0e13;
+  border: 1px solid #2f4153;
+  border-bottom-width: 3px;
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 1050px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(65vh, 1fr) auto;
+  }
+}
